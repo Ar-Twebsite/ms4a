@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Ground Studios | Game Development Roblox</title>
+    <meta name="description"
+        content="Second Ground Studios crea hit virali su Roblox. 22M+ visite. Sviluppo professionale per Brand e Creator.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tally Widget Script -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <!-- Import Maps for Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loader-container">
+            <div class="loader"></div>
+            <div class="loader-text">INITIALIZING WORLD...</div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollBar"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <!-- Vignette Effect -->
+    <div class="vignette"></div>
+
+    <nav>
+        <div class="logo">SECOND GROUND STUDIOS</div>
+
+        <div class="nav-right">
+            <!-- Tally Trigger -->
+            <button class="cta-button" data-tally-open="0QBPV6" data-tally-layout="modal" data-tally-width="600"
+                data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+                PARLA CON IL TEAM
+            </button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <div class="split-container">
+
+        <!-- RIGHT COLUMN: THE STAGE (Sticky 3D) -->
+        <div class="stage-col">
+            <div id="canvas-container"></div>
+            <div class="stage-overlay"></div>
+        </div>
+
+        <!-- LEFT COLUMN: THE NARRATIVE (Scroll) -->
+        <div class="narrative-col">
+
+            <!-- HERO -->
+            <section class="narrative-section" id="hero">
+                <div class="text-block">
+                    <span class="label">FROM CREATORS TO DEVELOPERS</span>
+                    <h1>Costruiamo la Tua Prossima Hit su Roblox.</h1>
+                    <p class="big-lead">Non indoviniamo cosa piace ai giocatori. Lo sappiamo. Trasformiamo la tua idea
+                        in un asset digitale da milioni di visite.</p>
+
+                    <!-- Social Proof Stats -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-value" data-count="22">22.6M</div>
+                            <div class="stat-label">Total Plays</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" data-count="90">90%</div>
+                            <div class="stat-label">Avg. Retention</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">TOP 1%</div>
+                            <div class="stat-label">National Rank</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="big-cta" data-tally-open="0QBPV6" data-tally-layout="modal"
+                            data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+                            CANDIDA IL TUO PROGETTO <span class="arr">→</span>
+                        </button>
+                        <a href="#hobby" class="secondary-cta">Vedi Portfolio</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHY US -->
+            <section class="narrative-section" id="why-us">
+                <div class="text-block">
+                    <span class="label">IL VANTAGGIO SLEALE</span>
+                    <h2>Perché le Nostre Mappe Convertono</h2>
+                    <p>La maggior parte degli studi sa scrivere codice. Noi sappiamo creare <strong>dipendenza</strong>
+                        (quella buona).</p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="feature-icon">🧠</span>
+                            <h3>Psicologia del Giocatore</h3>
+                            <p class="feature-desc">Loop di ricompensa calibrati per massimizzare la retention D1 e D7.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">📈</span>
+                            <h3>Analytics First</h3>
+                            <p class="feature-desc">Se non si può misurare, non si può migliorare. Decisioni basate sui
+                                dati, non sull'ego.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">⚡</span>
+                            <h3>Lag-Free Guarantee</h3>
+                            <p class="feature-desc">Ottimizzazione maniacale per girare a 60FPS anche su tablet
+                                economici.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">🔥</span>
+                            <h3>Viral Engines</h3>
+                            <p class="feature-desc">Meccaniche sociali integrate per spingere gli utenti a invitare gli
+                                amici.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT 1: HOBBY -->
+            <section class="narrative-section project" id="hobby">
+                <div class="text-block">
+                    <span class="idx">01</span>
+                    <h2>Lobby Parkour</h2>
+                    <p><strong>Il Caso Studio Virale.</strong> Come trasformare una meccanica semplice in un hub sociale
+                        da milioni di utenti.</p>
+
+                    <div class="tech-badges">
+                        <span class="badge">Social Obby</span>
+                        <span class="badge">Micro-Transactions</span>
+                        <span class="badge">Live Ops</span>
+                    </div>
+
+                    <div class="kpi">
+                        <span>RETENTION RATE</span>
+                        <div class="bar">
+                            <div class="fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="meta-stats">
+                        <p>
+                            <strong class="highlight-cyan">14.3M</strong> visite •
+                            <strong class="highlight-purple">16min</strong> avg session
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT 2: CITY -->
+            <section class="narrative-section project" id="city">
+                <div class="text-block">
+                    <span class="idx">02</span>
+                    <h2>City GO</h2>
+                    <p><strong>Open World Scalabile.</strong> Un ecosistema urbano dove i giocatori creano la propria
+                        economia.</p>
+
+                    <div class="tech-badges">
+                        <span class="badge">Procedural Gen</span>
+                        <span class="badge">Economy System</span>
+                    </div>
+
+                    <div class="kpi">
+                        <span>USER ENGAGEMENT</span>
+                        <div class="bar">
+                            <div class="fill" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="meta-stats">
+                        <p>
+                            <strong class="highlight-cyan">5.2M</strong> visite •
+                            <strong class="highlight-purple">High LTV</strong> users
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT 3: CARDS -->
+            <section class="narrative-section project" id="cards">
+                <div class="text-block">
+                    <span class="idx">03</span>
+                    <h2>Viral Search</h2>
+                    <p><strong>Dopamina Pura.</strong> Meccaniche di collezione e trading progettate per la viralità su
+                        YouTube e TikTok.</p>
+
+                    <div class="tech-badges">
+                        <span class="badge">Trading System</span>
+                        <span class="badge">Collection Logic</span>
+                    </div>
+
+                    <div class="kpi">
+                        <span>VIRAL FACTOR</span>
+                        <div class="bar">
+                            <div class="fill" style="width: 98%"></div>
+                        </div>
+                    </div>
+
+                    <div class="meta-stats">
+                        <p>
+                            <strong class="highlight-cyan">3.1M</strong> visite •
+                            <strong class="highlight-purple">4.2x</strong> share rate
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT 4: HOUSE -->
+            <section class="narrative-section project" id="house">
+                <div class="text-block">
+                    <span class="idx">04</span>
+                    <h2>Blox Flipper</h2>
+                    <p><strong>User Generated Content.</strong> Diamo agli utenti gli strumenti per costruire il loro
+                        divertimento.</p>
+
+                    <div class="tech-badges">
+                        <span class="badge">Building System</span>
+                        <span class="badge">Data Saving</span>
+                    </div>
+
+                    <div class="kpi">
+                        <span>CREATIVITY SCORE</span>
+                        <div class="bar">
+                            <div class="fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="meta-stats">
+                        <p>
+                            <strong class="highlight-cyan">89%</strong> completion rate
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECT 5: NEVE (FIXED) -->
+            <section class="narrative-section project" id="neve">
+                <div class="text-block">
+                    <span class="idx">05</span>
+                    <h2>Progetto Neve</h2>
+                    <p><strong>Next Gen Survival.</strong> Stiamo spingendo i limiti di ciò che è tecnicamente possibile
+                        su Roblox.</p>
+
+                    <div class="tech-badges">
+                        <span class="badge">Particles VFX</span>
+                        <span class="badge">Dynamic Weather</span>
+                        <span class="badge">Immersion</span>
+                    </div>
+
+                    <div class="kpi">
+                        <span>ANTICIPATION LEVEL</span>
+                        <div class="bar">
+                            <div class="fill blink-anim" style="width: 95%; background: var(--accent-pink);"></div>
+                        </div>
+                    </div>
+
+                    <div class="meta-stats" style="border-left: 3px solid var(--accent-pink); padding-left: 1rem;">
+                        <p style="margin:0;">
+                            <strong style="color: var(--accent-pink);">CLOSED BETA</strong> in corso<br>
+                            <span style="font-size: 0.8rem; color: #888;">Accesso disponibile solo su invito per
+                                Partner.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROCESS / OFFER -->
+            <section class="narrative-section" id="process">
+                <div class="text-block">
+                    <span class="label">COME LAVORIAMO</span>
+                    <h2>Il Metodo "Fail Fast"</h2>
+                    <p>Non sprechiamo il tuo budget in mesi di sviluppo cieco. Prototipiamo, testiamo col pubblico,
+                        iteriamo.</p>
+
+                    <ul class="process-list">
+                        <li>
+                            <span class="p-num">01</span>
+                            <div>
+                                <h3>Market Fit Analysis</h3>
+                                <p>Studiamo i competitor per trovare il vuoto di mercato.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="p-num">02</span>
+                            <div>
+                                <h3>MVP & Testing</h3>
+                                <p>Lancio rapido delle meccaniche core per validare l'idea.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="p-num">03</span>
+                            <div>
+                                <h3>Scale & Polish</h3>
+                                <p>Una volta validato, investiamo in grafica, suoni e marketing.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CONTACT (TALLY INTEGRATED) -->
+            <section class="narrative-section" id="contact">
+                <div class="text-block">
+                    <span class="label">READY TO LAUNCH?</span>
+                    <h2>Hai il budget. Hai la visione.<br>Ti manca solo il team.</h2>
+                    <p>Accettiamo un numero limitato di clienti per garantire la massima qualità. Candidati ora per
+                        verificare la disponibilità.</p>
+
+                    <div style="margin-top: 2.5rem;">
+                        <button class="big-cta" data-tally-open="0QBPV6" data-tally-layout="modal"
+                            data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+                            INIZIA LA CANDIDATURA <span class="arr">→</span>
+                        </button>
+                    </div>
+
+                    <div class="guarantee-box">
+                        <p>🔒 <strong>Zero Spam Guarantee:</strong> La tua idea rimane tua. NDA disponibile su richiesta
+                            nel form.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

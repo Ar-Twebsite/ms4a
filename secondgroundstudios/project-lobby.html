@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Parkour | Case Study - Second Ground Studios</title>
+    <meta name="description"
+        content="Scopri come abbiamo creato Hobby Parkour, un'esperienza di parkour virale con 2.3M visite e 85% retention D1.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Specific overrides for case study */
+        body {
+            background: linear-gradient(135deg, #080808 0%, #0a0a12 50%, #080808 100%);
+        }
+
+        .case-study-content {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cs-hero {
+            padding: 4rem 5%;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .meta-label {
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .huge-title {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: var(--gradient-cyber);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.4rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            padding: 0 5%;
+            margin-bottom: 6rem;
+        }
+
+        .cs-stat-box {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cs-stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-cyber);
+            transform: scaleX(0);
+            transition: transform var(--transition-base);
+        }
+
+        .cs-stat-box:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cs-stat-box:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-cyan);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-key {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .stat-val {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1rem;
+            background: var(--gradient-cyber);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cs-section {
+            padding: 0 5%;
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .section-desc {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 0 3rem 0;
+            line-height: 1.7;
+        }
+
+        .cs-img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-block {
+            text-align: center;
+            padding: 6rem 5%;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            margin: 4rem 5%;
+        }
+
+        .contact-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            background: var(--gradient-cyber);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all var(--transition-base);
+            letter-spacing: 0.05em;
+        }
+
+        .back-link:hover {
+            gap: 0.75rem;
+            color: var(--accent-purple);
+        }
+
+        @media (max-width: 900px) {
+            .huge-title {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-title {
+                font-size: 2.5rem;
+            }
+
+            .cs-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <nav>
+        <a href="index.html" class="back-link">← TORNA ALLA HOME</a>
+        <a href="mailto:tpocteam@gmail.com" class="cta-button">CONTATTACI</a>
+    </nav>
+
+    <main class="case-study-content">
+        <section class="cs-hero">
+            <span class="meta-label">CASE STUDY / 01</span>
+            <h1 class="huge-title">HOBBY PARKOUR</h1>
+            <p class="hero-desc">Come abbiamo trasformato un semplice concept di movimento in un fenomeno virale da
+                2.3M+ visite, con retention superiore alla media di settore.</p>
+        </section>
+
+        <section class="cs-grid">
+            <div class="cs-stat-box">
+                <h3 class="stat-key">RETENTION D1</h3>
+                <div class="stat-val">85%</div>
+                <p style="margin-bottom: 0;">Superiore alla media di settore del 15%. Sistema di checkpoint ottimizzato.
+                </p>
+            </div>
+            <div class="cs-stat-box">
+                <h3 class="stat-key">AVG SESSION</h3>
+                <div class="stat-val">12min</div>
+                <p style="margin-bottom: 0;">Grazie al sistema di ricompense sociali e progression curve calibrata.</p>
+            </div>
+            <div class="cs-stat-box">
+                <h3 class="stat-key">TOTAL VISITS</h3>
+                <div class="stat-val">2.3M</div>
+                <p style="margin-bottom: 0;">Crescita organica attraverso meccaniche di sharing integrate.</p>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <h2 class="section-title">LA SFIDA</h2>
+            <p class="section-desc">
+                Il mercato dei Parkour su Roblox è saturo. La sfida era creare qualcosa che non fosse solo "saltare",
+                ma "stare insieme". Abbiamo introdotto meccaniche social innovative che trasformano il parkour da
+                esperienza solitaria a social hub.
+            </p>
+
+            <img src="https://placehold.co/1200x600/0a0a12/00d4ff?text=Gameplay+Analysis+%7C+Social+Zones"
+                class="cs-img" alt="Gameplay Analysis">
+        </section>
+
+        <section class="cs-section">
+            <h2 class="section-title">LA SOLUZIONE</h2>
+            <p class="section-desc">
+                Abbiamo diviso la mappa in "Social Chill Zones" e "Hardcore Tracks". Questo ha permesso ai giocatori
+                hardcore di competere nelle leaderboards mentre i casual potevano socializzare, aumentando sia la
+                retention che la viralità organica.
+            </p>
+
+            <div class="features-grid" style="margin-bottom: 3rem;">
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Difficulty Curve</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Sistema di difficoltà progressiva con curve di
+                        apprendimento ottimizzata per massimizzare il flow state.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">👥</span>
+                    <h3>Social Mechanics</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Zone di ritrovo integrate, sistema di sfide
+                        multiplayer, e condivisione automatica dei record.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Physics Perfection</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Fisica calibrata al millisecondo per garantire
+                        movimenti fluidi e prevedibili. Zero frustrazione.</p>
+                </div>
+            </div>
+
+            <img src="https://placehold.co/1200x600/0a0a12/8c52ff?text=Level+Design+%7C+Flow+Optimization"
+                class="cs-img" alt="Level Design">
+        </section>
+
+        <section class="cs-section">
+            <h2 class="section-title">RISULTATI</h2>
+            <p class="section-desc">
+                I numeri parlano chiaro. Abbiamo superato ogni benchmark del settore, creando un'esperienza che non
+                solo coinvolge, ma crea comunità.
+            </p>
+
+            <div class="stats-row" style="margin-bottom: 2rem;">
+                <div class="stat-card">
+                    <div class="stat-value">68%</div>
+                    <div class="stat-label">Return Rate D7</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3.2x</div>
+                    <div class="stat-label">Viralità vs Media</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">124K</div>
+                    <div class="stat-label">Social Shares</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-block">
+            <h2 class="contact-title">VUOI RISULTATI SIMILI?</h2>
+            <p
+                style="font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Trasformiamo la tua idea in un'esperienza virale. Ogni progetto è supportato da dati, test, e anni di
+                esperienza dal punto di vista del giocatore.
+            </p>
+            <a href="mailto:tpocteam@gmail.com" class="big-cta">PARLIAMONE <span class="arr">→</span></a>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        // Hide loading screen
+        setTimeout(() => {
+            document.getElementById('loading').classList.add('hidden');
+        }, 800);
+
+        // Custom cursor (desktop only)
+        if (window.innerWidth > 900) {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
+
+            document.addEventListener('mousemove', (e) => {
+                gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: 0.1 });
+                gsap.to(cursorCircle, { x: e.clientX, y: e.clientY, duration: 0.4 });
+            });
+
+            // Hover effect
+            const interactiveElements = document.querySelectorAll('a, .cs-stat-box, .feature-card');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    document.body.classList.add('cursor-hover');
+                });
+                el.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('cursor-hover');
+                });
+            });
+        } else {
+            // Hide cursor on mobile
+            document.querySelector('.cursor-dot').style.display = 'none';
+            document.querySelector('.cursor-circle').style.display = 'none';
+        }
+
+        // Animate elements on scroll
+        gsap.from('.cs-hero', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 0.3,
+            ease: 'power2.out'
+        });
+
+        gsap.from('.cs-stat-box', {
+            scrollTrigger: {
+                trigger: '.cs-grid',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            y: 30,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+
+        gsap.from('.feature-card', {
+            scrollTrigger: {
+                trigger: '.features-grid',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            y: 30,
+            stagger: 0.15,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+    </script>
+</body>
+
+</html>
